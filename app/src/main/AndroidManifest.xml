@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Remekv2">
         <activity
+            android:name=".bejelentkezes"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
