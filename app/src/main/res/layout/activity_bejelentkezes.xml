@@ -5,69 +5,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".bejelentkezes">
-
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppinsbold"
-        android:gravity="center"
         android:text="@string/login"
+        android:gravity="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/textinputUsername"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinputUsername"
+        android:id="@+id/textInputLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/username"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.20">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppinsmedium"
-            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+            tools:ignore="TextContrastCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinputPassword"
+        android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textinputUsername"
-        app:layout_constraintVertical_bias="0.05">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintVertical_bias="0.050000000">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppinsmedium"
             android:inputType="textPassword"
-            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+            tools:ignore="TextContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/LoginBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/loginbtn"
+        android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textinputPassword"
-        tools:ignore="DuplicateSpeakableTextCheck" />
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.10"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

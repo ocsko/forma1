@@ -17,22 +17,20 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class bejelentkezes extends AppCompatActivity {
     TextInputEditText textInputEditTextUsername,textInputEditTextPassword;
     Button loginButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bejelentkezes);
-        textInputEditTextUsername = findViewById(R.id.textinputUsername);
-        textInputEditTextPassword = findViewById(R.id.textinputPassword);
+        textInputEditTextUsername = findViewById(R.id.usernameLogin);
+        textInputEditTextPassword = findViewById(R.id.passwordLogin);
         loginButton = findViewById(R.id.LoginBtn);
-
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username, password;
+                String  username, password, fullname;
                 username = String.valueOf(textInputEditTextUsername.getText());
                 password = String.valueOf(textInputEditTextPassword.getText());
-                if (!username.equals("") && !password.equals("")) {
+                if(!username.equals("") && !password.equals("")) {
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
@@ -51,13 +49,13 @@ public class bejelentkezes extends AppCompatActivity {
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
-                                    if (result.equals("Login Success")) {
+                                    if(result.equals("Login Success")){
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), fogadas.class);
+                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         intent.putExtra("Username", username);
                                         startActivity(intent);
                                         finish();
-                                    } else {
+                                    }else{
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                     }
                                     Log.i("PutData", result);
@@ -66,6 +64,9 @@ public class bejelentkezes extends AppCompatActivity {
                             //End Write and Read data with URL
                         }
                     });
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "All fields required!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
