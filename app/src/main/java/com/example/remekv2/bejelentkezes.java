@@ -22,6 +22,8 @@ public class bejelentkezes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bejelentkezes);
+        textInputEditTextUsername = findViewById(R.id.textinputUsername);
+        textInputEditTextPassword = findViewById(R.id.textinputPassword);
         loginButton = findViewById(R.id.LoginBtn);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -45,13 +47,13 @@ public class bejelentkezes extends AppCompatActivity {
                             data[0] = username;
                             data[1] = password;
                             //PutData putData = new PutData("http://localhost/registerlogin/login.php", "POST", field, data);
-                            PutData putData = new PutData("http://10.0.11.110/forma1/login.php", "POST", field, data);
+                            PutData putData = new PutData("http://10.0.11.116/forma1/login.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
                                     if (result.equals("Login Success")) {
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), fogadas.class);
                                         intent.putExtra("Username", username);
                                         startActivity(intent);
                                         finish();
