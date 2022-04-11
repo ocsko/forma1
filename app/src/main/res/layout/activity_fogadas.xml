@@ -49,20 +49,17 @@
         app:layout_constraintVertical_bias="0.244"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Spinner
-        android:id="@+id/stake_spinner"
-        android:layout_width="300dp"
+    <Button
+        android:id="@+id/fogadasButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/cardview_light_background"
-        android:minHeight="48dp"
-        android:spinnerMode="dropdown"
+        android:text="@string/fogadas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.847" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

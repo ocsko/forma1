@@ -2,15 +2,24 @@ package com.example.remekv2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class fogadas extends AppCompatActivity {
 
-    Spinner teamSpinner, racerSpinner;
+    Spinner teamSpinner, racerSpinner, locationSpinner;
+    Button fogadasButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +28,12 @@ public class fogadas extends AppCompatActivity {
 
         teamSpinner = findViewById(R.id.team_spinner);
         racerSpinner = findViewById(R.id.racer_spinner);
+        locationSpinner = findViewById(R.id.location_spinner);
+        fogadasButton = findViewById(R.id.fogadasButton);
 
+        String[] locations = new String[]{"Magyar", "Nem magyar"};
+        final ArrayAdapter<String> locationsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, locations);
+        locationSpinner.setAdapter(locationsAdapter);
 
         String[] teams = new String[]{"Red Bull Racing", "Mercedes-AMG", "McLaren-Mercedes", "Williams-Mercedes", "Ferrari", "Haas-Ferrari",
                 "Alfa Romeo Racing", "AlphaTauri-Red Bull", "Alpine-Renault", "Aston Martin"};
@@ -96,6 +110,55 @@ public class fogadas extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        fogadasButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String location = locationSpinner.getSelectedItem().toString();
+                String team = teamSpinner.getSelectedItem().toString();
+                String racer = racerSpinner.getSelectedItem().toString();
+
+                if(!location.equals("")) {
+                    Handler handler = new Handler(Looper.getMainLooper());
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            //Starting Write and Read data with URL
+                            //Creating array for parameters
+                            String[] field = new String[3];
+                            field[0] = "race";
+                            field[1] = "team";
+                            field[2] = "driver";
+                            //Creating array for data
+                            String[] data = new String[3];
+                            data[0] = location;
+                            data[1] = team;
+                            data[2] = racer;
+                            //PutData putData = new PutData("http://localhost/registerlogin/signup.php", "POST", field, data);
+                            PutData putData = new PutData("http://10.0.11.116/forma1/bet.php", "POST", field, data);
+                            if (putData.startPut()) {
+                                if (putData.onComplete()) {
+                                    String result = putData.getResult();
+                                    if(result.equals("Bet Success")){
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }else{
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                    }
+                                    Log.i("PutData", result);
+                                }
+                            }
+                            //End Write and Read data with URL
+                        }
+                    });
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "All fields required!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

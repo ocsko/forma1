@@ -5,4 +5,5 @@
     <string name="password">password</string>
     <string name="loginbtn">Login</string>
     <string name="eddigi_fogadasok">Eddigi fogadások</string>
+    <string name="fogadas">Fogadás</string>
 </resources>
