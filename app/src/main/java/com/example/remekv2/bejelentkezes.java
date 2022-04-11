@@ -51,7 +51,7 @@ public class bejelentkezes extends AppCompatActivity {
                                     String result = putData.getResult();
                                     if(result.equals("Login Success")){
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), fogadas.class);
                                         intent.putExtra("Username", username);
                                         startActivity(intent);
                                         finish();
