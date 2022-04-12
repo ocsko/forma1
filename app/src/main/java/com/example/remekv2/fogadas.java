@@ -31,7 +31,7 @@ public class fogadas extends AppCompatActivity {
         locationSpinner = findViewById(R.id.location_spinner);
         fogadasButton = findViewById(R.id.fogadasButton);
 
-        String[] locations = new String[]{"Magyar", "Nem magyar"};
+        String[] locations = new String[]{"Bahrein", "Szaúd-Arábia", "Ausztrália", "San-Marino", "USA(Miami)", "Spanyolország", "Monaco", "Azerbajdzsán", "Kanada", "Egyesült Királyság", "Ausztria", "Franciaország", "Magyarország", "Belgium", "Hollandia", "Olaszország", "Szingapúr", "Japán", "USA(Austin)", "Mexikó", "Brazília", "Egyesült Arab Emírségek"};
         final ArrayAdapter<String> locationsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, locations);
         locationSpinner.setAdapter(locationsAdapter);
 

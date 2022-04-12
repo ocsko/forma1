@@ -14,13 +14,13 @@
             android:name=".eddigifogadasok"
             android:exported="false" />
         <activity
-            android:name=".bejelentkezes"
+            android:name=".fogadas"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".fogadas"
+            android:name=".bejelentkezes"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
