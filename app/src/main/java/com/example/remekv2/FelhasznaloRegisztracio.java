@@ -1,11 +1,10 @@
 package com.example.remekv2;
 
 import android.os.Looper;
+import android.os.Handler;
 
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 public class FelhasznaloRegisztracio {
     protected void adatFeltoltes(User user) {
@@ -35,7 +34,7 @@ public class FelhasznaloRegisztracio {
                     data[4] = String.valueOf(user.getBornDate());
                     data[5] = String.valueOf(user.getCardNumber());
 
-                    PutData putData = new PutData("http://10.0.11.110/forma1php/register.php", "POST", field, data);
+                    PutData putData = new PutData("http://25.83.130.147/forma1php/register.php", "POST", field, data);
 
                     if (putData.startPut()) {
                         if (putData.onComplete()) {

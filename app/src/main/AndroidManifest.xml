@@ -21,6 +21,9 @@
             android:exported="false" />
         <activity
             android:name=".bejelentkezes"
+            android:exported="false" />
+        <activity
+            android:name=".Regisztracio"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
