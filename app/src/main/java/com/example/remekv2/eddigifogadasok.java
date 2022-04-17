@@ -24,7 +24,7 @@ public class eddigifogadasok extends AppCompatActivity {
         setContentView(R.layout.activity_eddigifogadasok);
 
         listView=  findViewById(R.id.bets);
-        getJSON("http://192.168.85.232/forma1php/fetchbets.php");
+        getJSON("http://192.168.0.17/forma1php/fetchbets.php");
 
     }
     private void getJSON(final String urlWebService) {

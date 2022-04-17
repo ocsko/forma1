@@ -58,7 +58,7 @@ public class Regisztracio  extends AppCompatActivity {
                         public void run() {
                             String[] field = new String[6];
                             field[0] = "username";
-                            field[1] = "parsswod";
+                            field[1] = "password";
                             field[2] = "FullName";
                             field[3] = "Email";
                             field[4] = "BornDate";
@@ -72,7 +72,7 @@ public class Regisztracio  extends AppCompatActivity {
                             data[4] = String.valueOf(user.getBornDate());
                             data[5] = String.valueOf(user.getCardNumber());
 
-                            PutData putData = new PutData("http://192.168.1.108/forma1php/register.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.0.17/forma1php/register.php", "POST", field, data);
 
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
