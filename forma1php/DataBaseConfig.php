@@ -8,7 +8,7 @@ class DataBaseConfig
 	
 	public function __construct(){
 		$this->servername = 'localhost';
-		$this->username = 'ocsko';
+		$this->username = 'root';
 		$this->password = '';
 		$this->databasename = 'forma1_2019n';
 	}

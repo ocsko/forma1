@@ -11,6 +11,9 @@
         android:theme="@style/Theme.Remekv2"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Regisztracio"
+            android:exported="false" />
+        <activity
             android:name=".eddigifogadasok"
             android:exported="false" />
         <activity
@@ -23,7 +26,7 @@
             android:name=".bejelentkezes"
             android:exported="false" />
         <activity
-            android:name=".Regisztracio"
+            android:name=".LoginOrRegister"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,8 +34,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

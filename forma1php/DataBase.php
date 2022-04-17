@@ -64,7 +64,7 @@ class DataBase
 
         $this->sql =
             "INSERT INTO " . $table . " (username, password, FullName, Email, BornDate, CardNumber)
-            VALUES ('" . $username . "','" . $password . "','" . $Email . "','" . $BornDate . "','" . $CardNumber . "')";
+            VALUES ('" . $username . "','" . $password . "','" . $FullName . "','" . $Email . "','" . $BornDate . "','" . $CardNumber . "')";
         if (mysqli_query($this->connect, $this->sql))
         {
             return true;
