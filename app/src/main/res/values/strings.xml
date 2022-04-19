@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">remekv2</string>
+    <string name="app_name">Forma1-GO</string>
     <string name="login">Bejelentkezés</string>
     <string name="username">Felhasználónév</string>
     <string name="password">Jelszó</string>
@@ -11,4 +11,9 @@
     <string name="email">Email</string>
     <string name="borndate">Születési dátum</string>
     <string name="cardnumber">Kártyaszám</string>
+    <string name="regisztraljon_itt">Regisztráljon itt!</string>
+    <string name="jelentkezzen_be_itt">Jelentkezzen be itt!</string>
+    <string name="forma1_go">Forma1-GO</string>
+    <string name="regisztr_ljon_itt">Regisztráljon itt</string>
+    <string name="bejelentkezes">Bejelentkezés</string>
 </resources>

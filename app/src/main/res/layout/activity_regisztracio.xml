@@ -7,15 +7,18 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="61dp"
-        android:layout_height="16dp"
+        android:layout_width="200dp"
+        android:layout_height="39dp"
         android:gravity="center"
         android:text="@string/register"
+        android:textColor="#000000"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
+        app:layout_constraintVertical_bias="0.055" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/Username"
@@ -34,7 +37,6 @@
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/username"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
             tools:targetApi="jelly_bean" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -56,7 +58,6 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
             tools:targetApi="jelly_bean" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -78,7 +79,6 @@
             android:id="@+id/fullname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/fullname"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
             tools:targetApi="jelly_bean" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -100,7 +100,6 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
             tools:targetApi="jelly_bean" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -122,7 +121,6 @@
             android:id="@+id/borndate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/borndate"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
             tools:targetApi="jelly_bean" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -144,7 +142,6 @@
             android:id="@+id/cardnumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cardnumber"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
             tools:targetApi="jelly_bean" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -155,14 +152,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/register"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="@color/black"
+        android:textColor="#000000"
+        android:backgroundTint="#DC143C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CardNumber"
         tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
-
+    <TextView
+        android:id="@+id/loginTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jelentkezzen_be_itt"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

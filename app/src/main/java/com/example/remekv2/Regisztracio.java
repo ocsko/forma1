@@ -19,7 +19,7 @@ public class Regisztracio  extends AppCompatActivity {
 
     TextInputEditText textInputEditTextUsername, textInputEditTextPassword, textInputEditTextFullName, textInputEditTextEmail, textInputEditTextBornDate, textInputEditTextCardNumber;
     Button registerButton;
-    TextView loginText;
+    TextView loginText, loginTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,16 @@ public class Regisztracio  extends AppCompatActivity {
         textInputEditTextCardNumber = findViewById(R.id.cardnumber);
 
         registerButton = findViewById(R.id.registerButton);
+        loginTV = findViewById(R.id.loginTextView);
+
+        loginTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), bejelentkezes.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override

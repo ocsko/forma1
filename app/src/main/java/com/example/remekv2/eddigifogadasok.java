@@ -2,9 +2,12 @@ package com.example.remekv2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -18,6 +21,8 @@ import java.net.URL;
 
 public class eddigifogadasok extends AppCompatActivity {
     ListView listView;
+    ImageButton backButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +30,16 @@ public class eddigifogadasok extends AppCompatActivity {
 
         listView=  findViewById(R.id.bets);
         getJSON("http://192.168.0.17/forma1php/fetchbets.php");
+        backButton = findViewById(R.id.imageBackButton);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
     private void getJSON(final String urlWebService) {

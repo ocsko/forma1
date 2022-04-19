@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class fogadas extends AppCompatActivity {
 
     Spinner teamSpinner, racerSpinner, locationSpinner;
     Button fogadasButton;
+    ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class fogadas extends AppCompatActivity {
         racerSpinner = findViewById(R.id.racer_spinner);
         locationSpinner = findViewById(R.id.location_spinner);
         fogadasButton = findViewById(R.id.fogadasButton);
+        backButton = findViewById(R.id.imageBackButton);
 
         String[] locations = new String[]{"Bahrein", "Szaúd-Arábia", "Ausztrália", "San-Marino", "USA(Miami)", "Spanyolország", "Monaco", "Azerbajdzsán", "Kanada", "Egyesült Királyság", "Ausztria", "Franciaország", "Magyarország", "Belgium", "Hollandia", "Olaszország", "Szingapúr", "Japán", "USA(Austin)", "Mexikó", "Brazília", "Egyesült Arab Emírségek"};
         final ArrayAdapter<String> locationsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, locations);
@@ -110,6 +113,15 @@ public class fogadas extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

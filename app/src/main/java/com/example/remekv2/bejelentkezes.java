@@ -7,6 +7,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class bejelentkezes extends AppCompatActivity {
     TextInputEditText textInputEditTextUsername,textInputEditTextPassword;
     Button loginButton;
+    TextView registerHere;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,17 @@ public class bejelentkezes extends AppCompatActivity {
         textInputEditTextUsername = findViewById(R.id.usernameLogin);
         textInputEditTextPassword = findViewById(R.id.passwordLogin);
         loginButton = findViewById(R.id.LoginBtn);
+        registerHere = findViewById(R.id.registerTextView);
+
+        registerHere.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Regisztracio.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
