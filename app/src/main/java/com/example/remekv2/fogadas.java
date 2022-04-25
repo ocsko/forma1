@@ -149,7 +149,7 @@ public class fogadas extends AppCompatActivity {
                             data[1] = team;
                             data[2] = racer;
                             //PutData putData = new PutData("http://localhost/registerlogin/signup.php", "POST", field, data);
-                            PutData putData = new PutData("http://192.168.0.17/forma1php/bet.php", "POST", field, data);
+                            PutData putData = new PutData("http://10.0.11.101/forma1php/bet.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();

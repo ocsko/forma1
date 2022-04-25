@@ -29,7 +29,7 @@ public class eddigifogadasok extends AppCompatActivity {
         setContentView(R.layout.activity_eddigifogadasok);
 
         listView=  findViewById(R.id.bets);
-        getJSON("http://192.168.0.17/forma1php/fetchbets.php");
+        getJSON("http://10.0.11.101/forma1php/fetchbets.php");
         backButton = findViewById(R.id.imageBackButton);
 
         backButton.setOnClickListener(new View.OnClickListener() {

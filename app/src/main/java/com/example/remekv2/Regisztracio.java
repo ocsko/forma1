@@ -82,7 +82,7 @@ public class Regisztracio  extends AppCompatActivity {
                             data[4] = String.valueOf(user.getBornDate());
                             data[5] = String.valueOf(user.getCardNumber());
 
-                            PutData putData = new PutData("http://192.168.0.17/forma1php/register.php", "POST", field, data);
+                            PutData putData = new PutData("http://10.0.11.101/forma1php/register.php", "POST", field, data);
 
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {

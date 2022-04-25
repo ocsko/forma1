@@ -44,7 +44,7 @@ class DataBase
         if (mysqli_num_rows($result) != 0) {
             $dbusername = $row['username'];
             $dbpassword = $row['password'];
-            if ($dbusername == $username && $dbpassword == $password) {
+            if ($dbusername == $username && password_verify($password, $dbpassword)) {
                 $login = true;
             } else $login = false;
         } else $login = false;
